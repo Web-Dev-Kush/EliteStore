@@ -28,62 +28,62 @@ const mockProducts = [
     category: 'Electronics',
     rating: 4.9
   },
-  // {
-  //   id: '3',
-  //   name: 'Leather Weekend Bag',
-  //   price: 189.99,
-  //   image: 'https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg',
-  //   category: 'Fashion',
-  //   rating: 4.7
-  // },
-  // {
-  //   id: '4',
-  //   name: 'Minimalist Desk Lamp',
-  //   price: 79.99,
-  //   image: 'https://images.pexels.com/photos/1112598/pexels-photo-1112598.jpeg',
-  //   category: 'Home',
-  //   rating: 4.6
-  // },
-  // {
-  //   id: '5',
-  //   name: 'Wireless Earbuds Pro',
-  //   price: 149.99,
-  //   image: 'https://images.pexels.com/photos/3780681/pexels-photo-3780681.jpeg',
-  //   category: 'Electronics',
-  //   rating: 4.5
-  // },
-  // {
-  //   id: '6',
-  //   name: 'Ultra HD Smart TV',
-  //   price: 999.99,
-  //   image: 'https://images.pexels.com/photos/6782570/pexels-photo-6782570.jpeg',
-  //   category: 'Electronics',
-  //   rating: 4.7
-  // },
-  // {
-  //   id: '7',
-  //   name: 'Professional Camera Kit',
-  //   price: 1299.99,
-  //   image: 'https://images.pexels.com/photos/51383/photo-camera-subject-photographer-51383.jpeg',
-  //   category: 'Electronics',
-  //   rating: 4.9
-  // },
-  // {
-  //   id: '8',
-  //   name: 'Ergonomic Office Chair',
-  //   price: 249.99,
-  //   image: 'https://images.pexels.com/photos/1957478/pexels-photo-1957478.jpeg',
-  //   category: 'Home',
-  //   rating: 4.6
-  // },
-  // {
-  //   id: '9',
-  //   name: 'Classic Leather Wallet',
-  //   price: 59.99,
-  //   image: 'https://images.pexels.com/photos/4638897/pexels-photo-4638897.jpeg',
-  //   category: 'Fashion',
-  //   rating: 4.4
-  // }
+  {
+    id: '3',
+    name: 'Leather Weekend Bag',
+    price: 189.99,
+    image: 'https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg',
+    category: 'Fashion',
+    rating: 4.7
+  },
+  {
+    id: '4',
+    name: 'Minimalist Desk Lamp',
+    price: 79.99,
+    image: 'https://images.pexels.com/photos/1112598/pexels-photo-1112598.jpeg',
+    category: 'Home',
+    rating: 4.6
+  },
+  {
+    id: '5',
+    name: 'Wireless Earbuds Pro',
+    price: 149.99,
+    image: 'https://images.pexels.com/photos/3780681/pexels-photo-3780681.jpeg',
+    category: 'Electronics',
+    rating: 4.5
+  },
+  {
+    id: '6',
+    name: 'Ultra HD Smart TV',
+    price: 999.99,
+    image: 'https://images.pexels.com/photos/6782570/pexels-photo-6782570.jpeg',
+    category: 'Electronics',
+    rating: 4.7
+  },
+  {
+    id: '7',
+    name: 'Professional Camera Kit',
+    price: 1299.99,
+    image: 'https://images.pexels.com/photos/51383/photo-camera-subject-photographer-51383.jpeg',
+    category: 'Electronics',
+    rating: 4.9
+  },
+  {
+    id: '8',
+    name: 'Ergonomic Office Chair',
+    price: 249.99,
+    image: 'https://images.pexels.com/photos/1957478/pexels-photo-1957478.jpeg',
+    category: 'Home',
+    rating: 4.6
+  },
+  {
+    id: '9',
+    name: 'Classic Leather Wallet',
+    price: 59.99,
+    image: 'https://images.pexels.com/photos/4638897/pexels-photo-4638897.jpeg',
+    category: 'Fashion',
+    rating: 4.4
+  }
 ];
 
 export default function ProductList() {
