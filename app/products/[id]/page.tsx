@@ -7,6 +7,13 @@ import RelatedProducts from '@/components/product/related-products';
 import { Separator } from '@/components/ui/separator';
 
 // Mock product data (in a real app, this would come from the API)
+export async function generateStaticParams() {
+  return [
+    { id: '1' },
+    { id: '2' },
+    // Add more product IDs if you have them
+  ];
+}
 const getProductById = async (id: string) => {
   const mockProducts = {
     '1': {
