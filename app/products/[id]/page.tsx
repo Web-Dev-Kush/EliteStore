@@ -6,20 +6,20 @@ import ProductActions from "@/components/product/product-actions";
 import RelatedProducts from "@/components/product/related-products";
 import { Separator } from "@/components/ui/separator";
 
-export async function generateStaticParams() {
-  return [
-    { id: "1" },
-    { id: "2" },
-    { id: "3" },
-    { id: "4" },
-    { id: "5" },
-    { id: "6" },
-    { id: "7" },
-    { id: "8" },
-    { id: "9" },
-    // Add more product IDs if you have them
-  ];
-}
+// export async function generateStaticParams() {
+//   return [
+//     { id: "1" },
+//     { id: "2" },
+//     { id: "3" },
+//     { id: "4" },
+//     { id: "5" },
+//     { id: "6" },
+//     { id: "7" },
+//     { id: "8" },
+//     { id: "9" },
+//     // Add more product IDs if you have them
+//   ];
+// }
 
 // Mock product data (in a real app, this would come from the API)
 const getProductById = async (id: string) => {
