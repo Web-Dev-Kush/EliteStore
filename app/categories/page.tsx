@@ -1,6 +1,7 @@
 import Head from "next/head";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
+
 import img1 from "../../public/images/fashion.jpg";
 import img2 from "../../public/images/kitchen.jpg";
 
@@ -8,7 +9,7 @@ type Category = {
   name: string;
   slug: string;
   description: string;
-  image: any;
+  image: string | StaticImageData;
 };
 
 const categories: Category[] = [
