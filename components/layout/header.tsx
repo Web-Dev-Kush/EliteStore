@@ -1,15 +1,16 @@
 "use client";
 
-import Link from 'next/link';
-import { useState, useEffect } from 'react';
-import { usePathname } from 'next/navigation';
-import { Button } from '@/components/ui/button';
-import { ShoppingCart, User, Menu, X, Moon, Sun, Search } from 'lucide-react';
-import { useCart } from '@/lib/providers/cart-provider';
-import { useTheme } from 'next-themes';
-import { Dialog, DialogContent } from '@/components/ui/dialog';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import CartSidebar from '@/components/cart/cart-sidebar';
+import Link from "next/link";
+import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import { ShoppingCart, User, Menu, X, Moon, Sun, Search } from "lucide-react";
+import { useCart } from "@/lib/providers/cart-provider";
+import { useTheme } from "next-themes";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import CartSidebar from "@/components/cart/cart-sidebar";
+import path from "node:path";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -18,7 +19,7 @@ export function Header() {
   const pathname = usePathname();
   const { totalItems } = useCart();
   const { theme, setTheme } = useTheme();
-  
+
   // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
@@ -28,34 +29,33 @@ export function Header() {
         setIsScrolled(false);
       }
     };
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'Products', path: '/products' },
-    { name: 'Categories', path: '/categories' },
-    { name: 'About', path: '/about' },
-    { name: 'Contact', path: '/contact' },
+    { name: "Home", path: "/" },
+    { name: "Products", path: "/products" },
+    { name: "Categories", path: "/categories" },
+    { name: "New Arrivals", path: "/new-arrivals" },
+    { name: "About", path: "/about" },
+    { name: "Contact", path: "/contact" },
   ];
 
   return (
-    <header 
+    <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-white dark:bg-gray-900 shadow-md py-3' 
-          : 'bg-transparent py-5'
+        isScrolled
+          ? "bg-white dark:bg-gray-900 shadow-md py-3"
+          : "bg-transparent py-5"
       }`}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <span className="text-xl font-bold tracking-tight">
-              EliteStore
-            </span>
+            <span className="text-xl font-bold tracking-tight">EliteStore</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -65,7 +65,9 @@ export function Header() {
                 key={link.path}
                 href={link.path}
                 className={`text-sm font-medium transition-colors hover:text-primary ${
-                  pathname === link.path ? 'text-primary' : 'text-muted-foreground'
+                  pathname === link.path
+                    ? "text-primary"
+                    : "text-muted-foreground"
                 }`}
               >
                 {link.name}
@@ -83,20 +85,20 @@ export function Header() {
             >
               <Search className="h-5 w-5" />
             </Button>
-            
+
             <Button
               variant="ghost"
               size="icon"
-              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               className="text-muted-foreground hover:text-foreground"
             >
-              {theme === 'dark' ? (
+              {theme === "dark" ? (
                 <Sun className="h-5 w-5" />
               ) : (
                 <Moon className="h-5 w-5" />
               )}
             </Button>
-            
+
             <Button
               variant="ghost"
               size="icon"
@@ -107,10 +109,14 @@ export function Header() {
                 <User className="h-5 w-5" />
               </Link>
             </Button>
-            
+
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="relative text-muted-foreground hover:text-foreground">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="relative text-muted-foreground hover:text-foreground"
+                >
                   <ShoppingCart className="h-5 w-5" />
                   {totalItems > 0 && (
                     <span className="absolute -top-1 -right-1 bg-primary text-primary-foreground text-xs rounded-full h-5 w-5 flex items-center justify-center">
@@ -123,7 +129,7 @@ export function Header() {
                 <CartSidebar />
               </SheetContent>
             </Sheet>
-            
+
             {/* Mobile menu button */}
             <Button
               variant="ghost"
@@ -143,7 +149,11 @@ export function Header() {
           <div className="h-full flex flex-col">
             <div className="flex items-center justify-between p-4 border-b">
               <span className="text-xl font-bold">EliteStore</span>
-              <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(false)}>
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
                 <X className="h-5 w-5" />
               </Button>
             </div>
@@ -153,7 +163,9 @@ export function Header() {
                   key={link.path}
                   href={link.path}
                   className={`text-lg font-medium transition-colors hover:text-primary ${
-                    pathname === link.path ? 'text-primary' : 'text-muted-foreground'
+                    pathname === link.path
+                      ? "text-primary"
+                      : "text-muted-foreground"
                   }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
@@ -194,11 +206,13 @@ export function Header() {
             <div className="pt-4">
               <h3 className="text-sm font-medium mb-2">Popular Searches</h3>
               <div className="flex flex-wrap gap-2">
-                {['Smartphones', 'Laptops', 'Headphones', 'Watches'].map((term) => (
-                  <Button key={term} variant="outline" size="sm">
-                    {term}
-                  </Button>
-                ))}
+                {["Smartphones", "Laptops", "Headphones", "Watches"].map(
+                  (term) => (
+                    <Button key={term} variant="outline" size="sm">
+                      {term}
+                    </Button>
+                  )
+                )}
               </div>
             </div>
           </div>
