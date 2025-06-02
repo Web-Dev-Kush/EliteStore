@@ -19,13 +19,14 @@ export default function ContactForm() {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-
+debugger
     try {
       const res = await fetch("http://localhost:5000/api/user", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
+debugger
 
       if (res.ok) {
         setSuccessMessage("User added successfully");
@@ -47,6 +48,8 @@ export default function ContactForm() {
       }
     } catch (err) {
       console.error(err);
+debugger
+
       setStatus("Server error.");
     }
   };
@@ -65,8 +68,8 @@ export default function ContactForm() {
             First Name
           </label>
           <input
-            name="name"
-            defaultValue={formData.fname}
+            name="fname"
+            value={formData.fname}
             onChange={handleChange}
             required
             className="mt-1 w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -78,8 +81,8 @@ export default function ContactForm() {
             Last Name
           </label>
           <input
-            name="name"
-            defaultValue={formData.lname}
+            name="lname"
+            value={formData.lname}
             onChange={handleChange}
             required
             className="mt-1 w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
