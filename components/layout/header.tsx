@@ -41,6 +41,8 @@ export function Header() {
     { name: "New Arrivals", path: "/new-arrivals" },
     { name: "About", path: "/about" },
     { name: "Contact", path: "/contact" },
+    { name: "Add User", path: "/contactForm"},
+    { name: "Add Product", path: "/productForm"}
   ];
 
   return (
